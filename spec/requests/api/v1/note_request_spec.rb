@@ -7,7 +7,8 @@ RSpec.describe "Create Note" do
     user = User.create!(name: 'Dani', email: 'simpboi@gmail.com', date_of_birth: Date.today)
 
     note_params = { date: Date.today,
-                    message: 'I am feeling extra sick today, I am getting cramps left and right.'
+                    message: 'I am feeling extra sick today, I am getting cramps left and right.',
+                    user_id: user.id
                   }
 
     headers = {"CONTENT_TYPE" => "application/json"}
@@ -25,7 +26,7 @@ RSpec.describe "Create Note" do
 
     user = User.create!(name: 'Dani', email: 'simpboi@gmail.com', date_of_birth: Date.today)
 
-    note = user.notes.create!(date: "2022-04-12", message: 'I am feeling great today')
+    note = user.notes.create!(date: "2022-04-12", message: 'I am feeling great today', user_id: user.id)
 
     get "/api/v1/users/#{user.id}/notes?date=2022-04-12"
 

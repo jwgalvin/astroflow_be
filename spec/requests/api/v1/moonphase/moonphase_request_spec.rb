@@ -1,9 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe 'gets the moonphases' do
-  xit 'gets the moon phase for the month ' do
-    month = 'April'
-    get "/api/v1/moonphases/month?=#{month}"
+  it 'gets the moon phase for today', :vcr do
+    get '/api/v1/moon'
     expect(response).to be_successful
+
+    moon = JSON.parse(response.body, symbolize_names: true)
+
+    expect(moon).to have_key(:date)
+    expect(moon[:date]).to be_a(String)
+
+    expect(moon).to have_key(:phase)
+    expect(moon[:phase]).to be_a(String)
   end
 end

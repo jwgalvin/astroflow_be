@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_15_213226) do
+ActiveRecord::Schema.define(version: 2022_04_16_140559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "daily_flow_charts", force: :cascade do |t|
+    t.date "date"
+    t.boolean "bloating", default: false
+    t.boolean "cramps", default: false
+    t.text "emotions"
+    t.integer "flow_status"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_daily_flow_charts_on_user_id"
+  end
 
   create_table "notes", force: :cascade do |t|
     t.date "date"
@@ -32,5 +44,6 @@ ActiveRecord::Schema.define(version: 2022_04_15_213226) do
     t.string "email"
   end
 
+  add_foreign_key "daily_flow_charts", "users"
   add_foreign_key "notes", "users"
 end

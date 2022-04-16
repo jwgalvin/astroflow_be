@@ -22,6 +22,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'vcr'
   gem 'webmock'
+  gem 'shoulda-matchers' # requires config
 end
 
 group :development do

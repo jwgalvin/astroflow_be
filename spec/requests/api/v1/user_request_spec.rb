@@ -18,5 +18,4 @@ RSpec.describe "Create User" do
 
     expect(user[:name]).to eq('test')
   end
-
 end

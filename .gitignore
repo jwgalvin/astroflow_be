@@ -26,3 +26,8 @@
 /coverage
 # Ignore application configuration
 /config/application.yml
+
+#Ignore vcr files
+spec/fixtures
+
+.DS_Store

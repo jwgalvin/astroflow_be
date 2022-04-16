@@ -29,3 +29,5 @@
 
 #Ignore vcr files
 spec/fixtures
+
+.DS_Store

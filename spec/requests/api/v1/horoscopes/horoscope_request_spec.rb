@@ -1,6 +1,6 @@
 require 'rails_helper' 
 
-RSpec.describe "Gets Yesterday, Today, Tomorrow, Horoscopes" do 
+RSpec.describe "Gets Yesterday, Today, Tomorrow, Horoscopes", :vcr do 
   it "gets today horoscope for a zodiac sign" do 
     zodiac_name = "Leo"
     day = "today"

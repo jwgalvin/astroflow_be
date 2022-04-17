@@ -15,10 +15,9 @@ RSpec.describe 'Send info of a Users flowchart' do
     expect(response).to be_successful
 
     flowchart = JSON.parse(response.body, symbolize_names: true)
-
-    expect(flowchart[:bloating]).to eq(daily_flow_chart[:bloating])
-    expect(flowchart[:cramps]).to eq(daily_flow_chart[:cramps])
-    expect(flowchart[:emotions]).to eq(daily_flow_chart[:emotions])
-    expect(flowchart[:flow_status]).to eq(daily_flow_chart[:flow_status])
+    expect(flowchart[:data][:attributes][:bloating]).to eq(daily_flow_chart[:bloating])
+    expect(flowchart[:data][:attributes][:cramps]).to eq(daily_flow_chart[:cramps])
+    expect(flowchart[:data][:attributes][:emotions]).to eq(daily_flow_chart[:emotions])
+    expect(flowchart[:data][:attributes][:flow_status]).to eq(daily_flow_chart[:flow_status])
   end
 end

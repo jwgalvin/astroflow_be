@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get "/horoscopes/find", to: 'horoscopes#index'
       post "users/daily_flow_chart", to: 'daily_flow_chart#create'
+      patch "users/daily_flow_chart", to: 'daily_flow_chart#update'
       resources :users, only: [:create] do
         resources :notes, only: [:index, :create]
       end

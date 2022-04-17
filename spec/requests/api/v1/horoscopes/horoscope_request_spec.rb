@@ -1,7 +1,7 @@
-require 'rails_helper' 
+require 'rails_helper'
 
-RSpec.describe "Gets Yesterday, Today, Tomorrow, Horoscopes", :vcr do 
-  it "gets today horoscope for a zodiac sign" do 
+RSpec.describe "Gets Yesterday, Today, Tomorrow, Horoscopes", :vcr do
+  it "gets today horoscope for a zodiac sign" do
     zodiac_name = "Leo"
     day = "today"
     keys = [:date_range, :current_date, :description, :compatibility, :mood, :color, :lucky_number, :lucky_time]
@@ -11,13 +11,13 @@ RSpec.describe "Gets Yesterday, Today, Tomorrow, Horoscopes", :vcr do
 
     horoscope_result = JSON.parse(response.body, symbolize_names: true)
 
-    expect(response).to be_successful 
+    expect(response).to be_successful
     expect(horoscope_result.count).to eq(8)
     expect(horoscope_result.keys).to eq(keys)
     expect(horoscope_result[:current_date]).to eq(todays_date)
-  end 
+  end
 
-  it "gets tommorows horoscope for a zodiac sign" do 
+  it "gets tommorows horoscope for a zodiac sign" do
     zodiac_name = "Leo"
     day = "tomorrow"
     keys = [:date_range, :current_date, :description, :compatibility, :mood, :color, :lucky_number, :lucky_time]
@@ -27,13 +27,13 @@ RSpec.describe "Gets Yesterday, Today, Tomorrow, Horoscopes", :vcr do
 
     horoscope_result = JSON.parse(response.body, symbolize_names: true)
 
-    expect(response).to be_successful 
+    expect(response).to be_successful
     expect(horoscope_result.count).to eq(8)
     expect(horoscope_result.keys).to eq(keys)
     expect(horoscope_result[:current_date]).to eq(tomorrows_date)
-  end 
+  end
 
-  it "gets yesterdays horoscope for a zodiac sign" do 
+  it "gets yesterdays horoscope for a zodiac sign" do
     zodiac_name = "Leo"
     day = "yesterday"
     keys = [:date_range, :current_date, :description, :compatibility, :mood, :color, :lucky_number, :lucky_time]
@@ -42,10 +42,10 @@ RSpec.describe "Gets Yesterday, Today, Tomorrow, Horoscopes", :vcr do
     get "/api/v1/horoscopes/find?sign=#{zodiac_name}&day=#{day}"
 
     horoscope_result = JSON.parse(response.body, symbolize_names: true)
-    
-    expect(response).to be_successful 
+
+    expect(response).to be_successful
     expect(horoscope_result.count).to eq(8)
     expect(horoscope_result.keys).to eq(keys)
     expect(horoscope_result[:current_date]).to eq(yesterdays_date)
-  end 
-end 
+  end
+end

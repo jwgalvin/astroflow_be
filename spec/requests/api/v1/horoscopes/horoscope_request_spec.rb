@@ -1,7 +1,7 @@
 require 'rails_helper' 
 
-RSpec.describe "Gets Yesterday, Today, Tomorrow, Horoscopes", :vcr do 
-  it "gets today horoscope for a zodiac sign" do 
+RSpec.describe "Gets Yesterday, Today, Tomorrow, Horoscopes" do 
+  it "gets today horoscope for a zodiac sign", :vcr do 
     zodiac_name = "Leo"
     day = "today"
     keys = [:date_range, :current_date, :description, :compatibility, :mood, :color, :lucky_number, :lucky_time]
@@ -17,7 +17,7 @@ RSpec.describe "Gets Yesterday, Today, Tomorrow, Horoscopes", :vcr do
     expect(horoscope_result[:current_date]).to eq(todays_date)
   end 
 
-  it "gets tommorows horoscope for a zodiac sign" do 
+  it "gets tommorows horoscope for a zodiac sign", :vcr do 
     zodiac_name = "Leo"
     day = "tomorrow"
     keys = [:date_range, :current_date, :description, :compatibility, :mood, :color, :lucky_number, :lucky_time]
@@ -33,7 +33,7 @@ RSpec.describe "Gets Yesterday, Today, Tomorrow, Horoscopes", :vcr do
     expect(horoscope_result[:current_date]).to eq(tomorrows_date)
   end 
 
-  it "gets yesterdays horoscope for a zodiac sign" do 
+  it "gets yesterdays horoscope for a zodiac sign", :vcr do 
     zodiac_name = "Leo"
     day = "yesterday"
     keys = [:date_range, :current_date, :description, :compatibility, :mood, :color, :lucky_number, :lucky_time]

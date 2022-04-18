@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 RSpec.describe "Gets Yesterday, Today, Tomorrow, Horoscopes", :vcr do
   xit "gets today horoscope for a zodiac sign" do
     zodiac_name = "Leo"
@@ -33,6 +34,7 @@ RSpec.describe "Gets Yesterday, Today, Tomorrow, Horoscopes", :vcr do
   end
 
   xit "gets yesterdays horoscope for a zodiac sign" do
+
     zodiac_name = "Leo"
     day = "yesterday"
     keys = [:date_range, :current_date, :description, :compatibility, :mood, :color, :lucky_number, :lucky_time]

@@ -6,7 +6,7 @@ RSpec.describe 'gets the moonphases' do
     expect(response).to be_successful
 
     moon = JSON.parse(response.body, symbolize_names: true)
-
+    
     expect(moon).to have_key(:date)
     expect(moon[:date]).to be_a(String)
 
@@ -14,3 +14,5 @@ RSpec.describe 'gets the moonphases' do
     expect(moon[:phase]).to be_a(String)
   end
 end
+
+

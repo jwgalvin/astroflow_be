@@ -7,8 +7,6 @@ RSpec.describe DailyFlowChart, type: :model do
 
   describe "validations" do
     it {should validate_presence_of(:date) }
-    it {should validate_presence_of(:bloating)}
-    it {should validate_presence_of(:cramps)}
     it {should validate_presence_of(:emotions)}
     it {should validate_presence_of(:flow_status)}
   end

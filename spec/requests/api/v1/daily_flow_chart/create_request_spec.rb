@@ -33,3 +33,4 @@ RSpec.describe "Creates a Daily Flow Chart" do
 		expect(created_chart.flow_status).to eq(daily_flow_chart_params[:flow_status])
   end 
 end 
+

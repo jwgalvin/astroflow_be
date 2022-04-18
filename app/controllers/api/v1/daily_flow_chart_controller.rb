@@ -6,8 +6,15 @@ class Api::V1::DailyFlowChartController < ApplicationController
 
   def update
     user = User.find_by(email: params[:email])
-    chart = DailyFlowChart.find_by(date: params[:date])
-    render json: chart.update(flow_chart_params)
+    chart = user.daily_flow_charts.find_by(date: params[:date])
+    chart.update(flow_chart_params)
+    render json: DailyFlowChartSerializer.new(chart)
+  end
+
+  def index
+    user = User.find_by(email: params[:email])
+    chart = user.daily_flow_charts.find_by(date: params[:date])
+    render json: DailyFlowChartSerializer.new(chart)
   end
 
   def flow_chart_params

@@ -1,7 +1,7 @@
 class Api::V1::DailyFlowChartController < ApplicationController
   def create
     user = User.find_by(email: params[:email])
-    render json: user.daily_flow_charts.create(flow_chart_params)
+    user.daily_flow_charts.create(flow_chart_params)
   end
 
   def update
@@ -17,7 +17,11 @@ class Api::V1::DailyFlowChartController < ApplicationController
     render json: DailyFlowChartSerializer.new(chart)
   end
 
+  private 
+
   def flow_chart_params
-    params.require(:daily_flow_chart).permit(:date, :bloating, :cramps, :emotions, :flow_status)
+    params.permit(:date, :bloating, :cramps, :emotions, :flow_status)
   end
+
 end
+#http://localhost:5000/api/v1/users/daily_flow_chart?email=#{@user_email}  

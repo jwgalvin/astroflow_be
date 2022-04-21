@@ -3,7 +3,6 @@ class Api::V1::DailyFlowChartController < ApplicationController
     user = User.find_by(email: params[:email])
     data = parse_data(params["daily_flow_chart"])
     create_flowchart(user, data)
-    #binding.pry
   end
 
   def update
@@ -45,4 +44,4 @@ class Api::V1::DailyFlowChartController < ApplicationController
                 flow_status: flow_chart[:flow_status])
   end
 end
-#http://localhost:5000/api/v1/users/daily_flow_chart?email=#{@user_email}
+

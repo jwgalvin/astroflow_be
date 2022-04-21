@@ -39,4 +39,3 @@ class Api::V1::DailyFlowChartController < ApplicationController
                 flow_status: flow_chart[:flow_status])
   end 
 end
-#http://localhost:5000/api/v1/users/daily_flow_chart?email=#{@user_email}  

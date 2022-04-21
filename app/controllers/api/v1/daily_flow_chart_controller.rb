@@ -3,6 +3,7 @@ class Api::V1::DailyFlowChartController < ApplicationController
     user = User.find_by(email: params[:email])
     data = parse_data(params["daily_flow_chart"])
     create_flowchart(user, data)
+    #binding.pry
   end
 
   def update
@@ -13,6 +14,7 @@ class Api::V1::DailyFlowChartController < ApplicationController
   end
 
   def index
+    #binding.pry
     user = User.find_by(email: params[:email])
     render json: user.daily_flow_charts
   end

@@ -4,7 +4,7 @@ RSpec.describe "Create Note" do
 
   it "create note endpoint" do
 
-    user = User.create!(name: 'Dani', email: 'simpboi@gmail.com', date_of_birth: Date.today)
+    user = User.create!(email: 'simpboi@gmail.com')
 
     note_params = { date: Date.today,
                     message: 'I am feeling extra sick today, I am getting cramps left and right.',
@@ -24,7 +24,7 @@ RSpec.describe "Create Note" do
 
   it "can call a note by date" do
 
-    user = User.create!(name: 'Dani', email: 'simpboi@gmail.com', date_of_birth: Date.today)
+    user = User.create!(email: 'simpboi@gmail.com')
 
     note = user.notes.create!(date: "2022-04-12", message: 'I am feeling great today', user_id: user.id)
 

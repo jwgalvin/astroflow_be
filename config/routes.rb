@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get '/horoscopes/find', to: 'horoscopes#index'
-      get 'users/daily_flow_chart', to: 'daily_flow_chart#index'
+      get 'users/daily_flow_chart', to: 'daily_flow_chart#show'
+      get 'users/daily_flow_chart/all', to: 'daily_flow_chart#index'
       post 'users/daily_flow_chart', to: 'daily_flow_chart#create'
       patch 'users/daily_flow_chart', to: 'daily_flow_chart#update'
       resources :users, only: [:create] do

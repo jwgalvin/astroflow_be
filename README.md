@@ -67,10 +67,12 @@ The design of this application relies on the facade design pattern. Here's a ver
 ![Screen Shot 2022-04-21 at 5 45 24 PM](https://user-images.githubusercontent.com/89754305/164557393-f62a356b-e07f-422f-9ef2-a83aec5387ea.png)
 
 
-## Get today & yesterdays horoscope 
+## Get today & yesterdays horoscope and moon information
 
 ### GET  http://localhost:5000/api/v1/horoscopes/find?sign=leo
 ```
+Response:
+
 {
     "today_horoscope": {
         "current_date": "April 22, 2022",
@@ -113,7 +115,15 @@ JSON Raw Body:
 
 ### POST http://localhost:5000/api/v1/users/daily_flow_chart?email=#{email}
 ```
-Condensed Response: 
+JSON Raw Body: 
+
+{ 
+    "date": "Mon, 18 Apr 2022",
+    "bloating": "true",
+    "cramps": "false",
+    "emotions": "I feel ok",
+    "flow_status": "moderate"
+}
 
 ```
 ## Edit a flow chart 
@@ -123,20 +133,36 @@ Condensed Response:
 ```
 JSON raw body:
 
+{ 
+    "date": "Mon, 18 Apr 2022",
+    "bloating": "true",
+    "cramps": "false",
+    "emotions": "I feel ok",
+    "flow_status": "moderate"
+}
 ```
-```
-Response:
 
-```
 ## Get a flow chart
 
 ### GET http://localhost:5000/api/v1/users/daily_flow_chart?email=#{email}&date=#{Date.today}
 ```
-JSON raw body: 
 
-```
-```
 Response:
+
+[
+    {
+        :id=>15,
+        :date=>"2022-04-22",
+        :bloating=>true,
+        :cramps=>true,
+        :emotions=>"Fill in",
+        :flow_status=>"Light",
+        :user_id=>8,
+        :created_at=>"2022-04-22T19:22:47.453Z",
+        :updated_at=>"2022-04-22T19:22:47.453Z"
+ 
+    }
+]
 
 ```
 

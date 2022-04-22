@@ -1,6 +1,7 @@
 class Api::V1::DailyFlowChartController < ApplicationController
   def create
-    user = User.find_by(email: params[:email])
+    #binding.pry
+    user = User.find_or_create_by(email: params[:email])
     data = parse_data(params["daily_flow_chart"])
     create_flowchart(user, data)
   end
@@ -44,4 +45,3 @@ class Api::V1::DailyFlowChartController < ApplicationController
                 flow_status: flow_chart[:flow_status])
   end
 end
-

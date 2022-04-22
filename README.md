@@ -67,11 +67,34 @@ The design of this application relies on the facade design pattern. Here's a ver
 ![Screen Shot 2022-04-21 at 5 45 24 PM](https://user-images.githubusercontent.com/89754305/164557393-f62a356b-e07f-422f-9ef2-a83aec5387ea.png)
 
 
-## Get a horoscope 
+## Get today & yesterdays horoscope 
 
 ### GET  http://localhost:5000/api/v1/horoscopes/find?sign=leo
 ```
-Condensed Response: 
+{
+    "today_horoscope": {
+        "current_date": "April 22, 2022",
+        "description": "For the next three days, a certain urgent undertone will be automatically added to each and every encounter. Does that mean you'll be feeling unhappy? Hardly. Passionate, maybe -- so why waste time pouting?",
+        "compatibility": "Sagittarius",
+        "mood": "Energetic",
+        "color": "Sky Blue",
+        "lucky_number": "30",
+        "lucky_time": "5am",
+        "moon": "Grass Moon",
+        "moon_phase": "Waning Gibbous"
+    },
+    "yesterday_horoscope": {
+        "current_date": "April 21, 2022",
+        "description": "Someone you've always thought of as 'just a friend' will be along shortly with a bold, brazen comment -- one you might not mind hearing at all. This won't be a typical day, but it will be memorable.",
+        "compatibility": "Aries",
+        "mood": "Productive",
+        "color": "Silver",
+        "lucky_number": "92",
+        "lucky_time": "4pm",
+        "moon": "Grass Moon",
+        "moon_phase": "Waning Gibbous"
+    }
+}
 
 ```
 
@@ -79,14 +102,15 @@ Condensed Response:
 
 ### POST http://localhost:5000/api/v1/users
 ```
-Condensed Response: 
+JSON Raw Body: 
+
+{ 
+    "email": "test@gmail.com"
+}
 
 ```
 ## Create a daily flow chart 
-```
-Condensed Response: 
 
-```
 ### POST http://localhost:5000/api/v1/users/daily_flow_chart?email=#{email}
 ```
 Condensed Response: 
@@ -98,46 +122,21 @@ Condensed Response:
 
 ```
 JSON raw body:
-{
-  "email": "you@example.com",
-  "password": "password",
-  "password_confirmation": "password"
-}
+
 ```
 ```
 Response:
-{
-    "data": {
-        "id": "2",
-        "type": "users",
-        "attributes": {
-            "email": "chris@example.com",
-            "api_key": "8a232e734270e093e960"
-        }
-    }
-}
+
 ```
 ## Get a flow chart
 
 ### GET http://localhost:5000/api/v1/users/daily_flow_chart?email=#{email}&date=#{Date.today}
 ```
 JSON raw body: 
-{
-  "email": "you@example.com",
-  "password": "password",
-  "password_confirmation": "password"
-}
+
 ```
 ```
 Response:
-{
-    "status": 400,
-    "message": "Email has already been taken",
-    "data": {
-        "email": [
-            "has already been taken"
-        ]
-    }
-}
+
 ```
 

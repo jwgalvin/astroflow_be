@@ -3,8 +3,9 @@ class Api::V1::HoroscopesController < ApplicationController
     zodiac_name = params[:sign]
     today = HoroscopeFacade.get_today_horoscope_moon(zodiac_name)
     yesterday = HoroscopeFacade.get_yesterday_horoscope_moon(zodiac_name)
-    render json: HoroscopeSerializer.new(today, yesterday)
 
+
+    render json:  HoroscopeSerializer.new(today), HoroscopeSerializer.new(yesterday)
     # { today_horoscope: HoroscopeFacade.get_today_horoscope_moon(zodiac_name),
     #                yesterday_horoscope: HoroscopeFacade.get_yesterday_horoscope_moon(zodiac_name)
     # }

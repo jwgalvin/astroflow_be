@@ -1,14 +1,13 @@
 class CombinedHoroscopeSerializer
   class << self
     def generate(both)
-      binding.pry
       { "data":
         {
           "id": nil,
           "type": 'horoscopes',
           "attributes":
             {
-              "Today":
+              "today_horoscope":
               {
                 "current_date": both.todays_date,
                 "description": both.description,
@@ -20,7 +19,7 @@ class CombinedHoroscopeSerializer
                 "moon": both.moon[0],
                 "moon_phase": both.moon_phase[0],
               },
-            "Yesterday":
+            "yesterday_horoscope":
               {
                 "current_date": both.prior_date,
                 "description": both.prior_description,

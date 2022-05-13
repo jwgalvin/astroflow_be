@@ -10,6 +10,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jsonapi-serializer'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
+gem 'faraday'
+
 group :development, :test do
   gem 'pry'
   gem 'factory_bot_rails'

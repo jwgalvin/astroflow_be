@@ -233,6 +233,7 @@ DEPENDENCIES
   capybara
   factory_bot_rails
   faker
+  faraday
   figaro
   jsonapi-serializer
   launchy

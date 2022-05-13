@@ -7,10 +7,18 @@ class HoroscopeMoon
               :lucky_number,
               :lucky_time,
               :moon,
-              :moon_phase
+              :moon_phase,
+              :prior_date,
+              :prior_description,
+              :prior_compatibility,
+              :prior_mood,
+              :prior_color,
+              :prior_lucky_number,
+              :prior_lucky_time,
+              :prior_moon,
+              :prior_moon_phase
 
   def initialize(horoscope_today, horoscope_yesterday, moon_today, moon_yesterday)
-    #binding.pry
     @todays_date = horoscope_today[:current_date],
     @description =  horoscope_today[:description],
     @compatibility = horoscope_today[:compatibility],

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Edits a Daily Flow Chart" do
-  it "can edit a daily flow chart" do
+  xit "can edit a daily flow chart" do
 
     user = User.create!(email: "test@gmail.com")
     daily_flow_chart = DailyFlowChart.create!(date: Date.today,

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Edits a Daily Flow Chart" do
-  xit "can edit a daily flow chart" do
+  it "can edit a daily flow chart" do
 
     user = User.create!(email: "test@gmail.com")
     daily_flow_chart = DailyFlowChart.create!(date: Date.today,
@@ -16,7 +16,7 @@ RSpec.describe "Edits a Daily Flow Chart" do
           bloating: true,
           cramps: false,
           emotions: "I feel not ok",
-          flow_status: 'light'
+          flow_status: 'Light'
      }
 
     headers = {"CONTENT_TYPE" => "application/json"}

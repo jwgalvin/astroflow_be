@@ -10,7 +10,6 @@ RSpec.describe "Gets Yesterday, Today, Tomorrow, Horoscopes", :vcr do
     get "/api/v1/horoscopes/find?sign=#{zodiac_name}"
     horoscope_result = JSON.parse(response.body, symbolize_names: true)
     expect(response).to be_successful
-  #binding.pry
     expect(horoscope_result[:data].count).to eq(3)
     expect(horoscope_result[:data][:attributes].keys.count).to eq(2)
     expect(horoscope_result[:data][:attributes][:today_horoscope].keys).to eq(keys)

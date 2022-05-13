@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'gets the moonphases' do
-  xit 'gets the moon phase for today', :vcr do
+  it 'gets the moon phase for today', :vcr do
     get '/api/v1/moon'
     expect(response).to be_successful
 

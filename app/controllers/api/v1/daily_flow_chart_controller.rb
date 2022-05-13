@@ -9,8 +9,9 @@ class Api::V1::DailyFlowChartController < ApplicationController
   def update
     user = User.find_by(email: params[:email])
     chart = user.daily_flow_charts.find_by(date: params[:date])
-    data = parse_data(params["daily_flow_chart"])
-    update_flowchart(chart, data)
+    #
+    #
+    update_flowchart(chart, params["daily_flow_chart"])
   end
 
   def index

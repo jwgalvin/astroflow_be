@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.describe "Gets Yesterday, Today, Tomorrow, Horoscopes", :vcr do
 
   it "gets todays and yesterdays horoscope and moon" do

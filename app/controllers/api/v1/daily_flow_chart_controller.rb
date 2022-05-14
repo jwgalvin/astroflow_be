@@ -25,12 +25,6 @@ class Api::V1::DailyFlowChartController < ApplicationController
 
   private
 
-
-
-  # def parse_data(data)
-  #   JSON.parse(data, symbolize_names: true)
-  # end
-
   def create_flowchart(user, flow_chart)
     user.daily_flow_charts.create(date: flow_chart[:date], bloating: flow_chart[:bloating],
                                   cramps: flow_chart[:cramps], emotions: flow_chart[:emotions],

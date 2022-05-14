@@ -1,18 +1,5 @@
 class HoroscopeFacade
   class << self
-    def get_today_horoscope_moon(zodiac_sign)
-      today = Time.now.to_i
-      horoscope_data = HoroscopeService.call_today_horoscope(zodiac_sign)
-      moon_data  = MoonService.get_moon(today)
-      horoscope(horoscope_data, moon_data)
-    end
-
-    def get_yesterday_horoscope_moon(zodiac_sign)
-      yesterday = Time.now.to_i - (60*60*24)
-      horoscope_data = HoroscopeService.call_yesterday_horoscope(zodiac_sign)
-      moon_data  = MoonService.get_moon(yesterday)
-      horoscope(horoscope_data, moon_data)
-    end
 
     def get_both_horoscopes(zodiac)
       today = Time.now.to_i
